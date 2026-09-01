@@ -28,39 +28,7 @@ export const botConfig = {
         type: 3,               // Custom
       },
     ],
-
-/**
- * Updates the bot's Discord presence with the live player count.
- * Falls back to a static message if the fetch fails, so the bot
- * never shows a broken/blank status.
- */
-async function updatePresence(client) {
-  const counts = await getFiveMPlayerCount();
-
-  const statusText = counts
-    ? `[${counts.current}/${counts.max}] on ${SERVER_LABEL}`
-    : `on ${SERVER_LABEL}`;
-
-  client.user.setPresence({
-    status: 'online',
-    activities: [
-      {
-        name: statusText,
-        type: 3, // Watching — shows as "Watching [2/64] on PRESTIGE RP"
-      },
-    ],
-  });
-}
-
-/**
- * Starts the recurring presence updates.
- * Call this once from your ready event: startPresenceUpdater(client);
- */
-export function startPresenceUpdater(client, intervalMs = 60_000) {
-  updatePresence(client); // run immediately on startup
-  setInterval(() => updatePresence(client), intervalMs);
-  logger.debug(`Presence updater started (refreshing every ${intervalMs / 1000}s)`);
-}
+  },
 
   // =========================
   // COMMAND BEHAVIOR

@@ -1,36 +1,33 @@
 import { logger } from '../utils/logger.js';
 
-// =========================
-// CONFIGURE THESE TWO VALUES
-// =========================
-const FIVEM_SERVER_IP = 'YOUR_SERVER_IP_OR_DOMAIN'; // e.g. "123.45.67.89:30120" (no http://)
-const SERVER_LABEL = 'PRESTIGE RP';                 // text shown after the count
+export const botConfig = {
+  // =========================
+  // BOT PRESENCE (what users see under the bot name)
+  // =========================
+  // `status` options:
+  // - "online"    = green dot
+  // - "idle"      = yellow moon
+  // - "dnd"       = red do-not-disturb
+  // - "invisible" = appears offline
+  presence: {
+    // Current online state shown on Discord.
+    status: "online",
 
-/**
- * Fetches live player count from a FiveM server's dynamic.json endpoint.
- * Every FiveM server exposes this automatically at /dynamic.json.
- */
-async function getFiveMPlayerCount() {
-  try {
-    const res = await fetch(`http://${FIVEM_SERVER_IP}/dynamic.json`, {
-      signal: AbortSignal.timeout(5000), // avoid hanging if server is down
-    });
-
-    if (!res.ok) {
-      throw new Error(`Server responded with status ${res.status}`);
-    }
-
-    const data = await res.json();
-
-    return {
-      current: data.clients ?? 0,
-      max: data.sv_maxclients ?? 64,
-    };
-  } catch (err) {
-    logger.warn('Failed to fetch FiveM player count:', err.message);
-    return null; // signal failure so we can fall back gracefully
-  }
-}
+    // Activity lines shown under the bot name.
+    // `type` number mapping from Discord:
+    // 0 = Playing
+    // 1 = Streaming
+    // 2 = Listening
+    // 3 = Watching
+    // 4 = Custom
+    // 5 = Competing
+    activities: [
+      {
+        name: "After Life Community", // required by Discord API, not shown in the client
+        state: "stalking",     // this is what people actually see
+        type: 3,               // Custom
+      },
+    ],
 
 /**
  * Updates the bot's Discord presence with the live player count.

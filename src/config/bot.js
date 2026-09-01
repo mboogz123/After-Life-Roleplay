@@ -24,8 +24,8 @@ export const botConfig = {
     activities: [
       {
         name: "After Life Community", // required by Discord API, not shown in the client
-        state: "stalking",     // this is what people actually see
-        type: 3,               // Custom
+        state: "Watching",     // this is what people actually see
+        type: 4,               // Custom
       },
     ],
   },

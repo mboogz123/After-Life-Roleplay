@@ -241,17 +241,18 @@ export const botConfig = {
         color: "#E74C3C",
         label: "High",
       },
-          urgent: {
+      urgent: {
         emoji: "",
         color: "#E91E63",
         label: "Urgent",
       },
     },
   },
-  
+
   // =========================
   // GIVEAWAY SETTINGS
   // =========================
+  giveaways: {
     // Default giveaway duration in milliseconds.
     // 86400000 = 24 hours.
     defaultDuration: 86400000,

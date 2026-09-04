@@ -246,7 +246,8 @@ export const botConfig = {
         color: "#E91E63",
         label: "Urgent",
       },
-
+   }
+      
   // =========================
   // GIVEAWAY SETTINGS
   // =========================

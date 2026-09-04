@@ -241,12 +241,18 @@ export const botConfig = {
         color: "#E74C3C",
         label: "High",
       },
-      urgent: {
+          urgent: {
         emoji: "",
         color: "#E91E63",
         label: "Urgent",
       },
-   }
+    },
+  },
+
+  // =========================
+  // GIVEAWAY SETTINGS
+  // =========================
+  giveaways: {
       
   // =========================
   // GIVEAWAY SETTINGS

@@ -248,16 +248,10 @@ export const botConfig = {
       },
     },
   },
-
+  
   // =========================
   // GIVEAWAY SETTINGS
   // =========================
-  giveaways: {
-      
-  // =========================
-  // GIVEAWAY SETTINGS
-  // =========================
-  giveaways: {
     // Default giveaway duration in milliseconds.
     // 86400000 = 24 hours.
     defaultDuration: 86400000,

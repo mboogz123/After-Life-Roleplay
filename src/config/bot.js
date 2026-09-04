@@ -213,39 +213,20 @@ export const botConfig = {
   // TICKET SYSTEM
   // =========================
   tickets: {
-    // Category ID where new tickets are created (null = no forced category).
-    defaultCategory: null,
+    // Category where new tickets go
+    defaultCategory: "YOUR_TICKET_CATEGORY_ID",
 
-    // Role IDs allowed to manage/support tickets.
-    supportRoles: [],
+    // Staff role(s) that can manage tickets
+    supportRoles: [
+        "YOUR_STAFF_ROLE_ID"
+    ],
 
-    // Priority options users/staff can assign.
-    priorities: {
-      none: {
-        emoji: "⚪",
-        color: "#95A5A6",
-        label: "None",
-      },
-      low: {
-        emoji: "🟢",
-        color: "#2ECC71",
-        label: "Low",
-      },
-      medium: {
-        emoji: "🟡",
-        color: "#F1C40F",
-        label: "Medium",
-      },
-      high: {
-        emoji: "🔴",
-        color: "#E74C3C",
-        label: "High",
-      },
-      urgent: {
-        emoji: "🚨",
-        color: "#E91E63",
-        label: "Urgent",
-      },
+    // ...leave everything else...
+
+    archiveCategory: "YOUR_ARCHIVE_CATEGORY_ID",
+
+    logChannel: "YOUR_TICKET_LOG_CHANNEL_ID",
+},
     },
 
     // Default priority for new tickets.
